@@ -4,10 +4,10 @@ import Radio from '../Radio/Radio';
 import Button from '../Button/Button';
 import CategoriesList from '../CategoriesList/CategoriesList';
 import { withCategoriesList } from '../../hocs/withCategoriesList/withCategoriesList';
-import { withSearchInput } from '../../hocs/withSearchInput/withSearchInput';
 import SearchInput from '../SearchInput/SearchInput';
 
 const SearchJokeForm = ({
+  setInputText,
   options,
   setType,
   getJoke,
@@ -17,7 +17,9 @@ const SearchJokeForm = ({
   joke,
 }) => {
   const EnhancedCategoriesList = withCategoriesList(CategoriesList);
-  const EnhancedSearchInput = withSearchInput(SearchInput);
+  const handleChange = (text) => {
+    setInputText(text);
+  };
   return (
     <div>
       <Radio name="search-type" value="Random" option={options.random} handleChange={setType} />
@@ -32,7 +34,7 @@ const SearchJokeForm = ({
       ) : null}
       <Radio name="search-type" value="Search" option={options.search} handleChange={setType} />
       {chosenOption === options.search ? (
-        <EnhancedSearchInput placeholder="Search sth"/>
+        <SearchInput placeholder="Search sth" onChange={handleChange} />
       ) : null}
       <Button text="Get a joke" onClick={getJoke} />
     </div>

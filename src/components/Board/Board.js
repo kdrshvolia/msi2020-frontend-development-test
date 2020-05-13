@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SearchJokeForm from '../SearchJokeForm/SearchJokeForm';
 
-const Board = ({ options, setType, setCategory, chosenOption, chosenCategory, getJoke, joke }) => {
+const Board = ({ setInputText, options, setType, setCategory, chosenOption, chosenCategory, getJoke, joke }) => {
   return (
     <SearchJokeForm
+      setInputText={setInputText}
       options={options}
       setType={setType}
       setCategory={setCategory}
@@ -26,6 +27,7 @@ Board.propTypes = {
   setCategory: PropTypes.func.isRequired,
   chosenOption: PropTypes.string.isRequired,
   chosenCategory: PropTypes.string,
+  setInputText: PropTypes.func.isRequired,
   getJoke: PropTypes.func.isRequired,
   joke: PropTypes.string.isRequired,
 };

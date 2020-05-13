@@ -13,6 +13,7 @@ const withBoard = (WrappedComponent) => {
       chosenOption: options.random,
       chosenCategory: '',
       joke: '',
+      inputText: '',
     };
 
     setType = (option) => {
@@ -27,6 +28,12 @@ const withBoard = (WrappedComponent) => {
       });
     };
 
+    setInputText = (text) => {
+      this.setState({
+        inputText: text,
+      });
+    };
+
     getJoke = () => {
       const { chosenOption, chosenCategory, joke } = this.state;
       if (chosenOption === options.categories) {
@@ -36,7 +43,7 @@ const withBoard = (WrappedComponent) => {
               {
                 joke: data,
               },
-              () => console.log(joke),
+              () => console.log(this.state.joke),
             );
           },
         );
@@ -46,7 +53,17 @@ const withBoard = (WrappedComponent) => {
             {
               joke: data,
             },
-            () => console.log(joke),
+            () => console.log(this.state.joke),
+          );
+        });
+      } else if (chosenOption === options.search) {
+        const { inputText } = this.state;
+        apiCall(`https://api.chucknorris.io/jokes/search?query=${inputText}`).then((data) => {
+          this.setState(
+            {
+              joke: data,
+            },
+            () => console.log(this.state.joke),
           );
         });
       }
@@ -56,6 +73,7 @@ const withBoard = (WrappedComponent) => {
       const { chosenOption, chosenCategory, joke } = this.state;
       return (
         <WrappedComponent
+          setInputText={this.setInputText}
           options={options}
           setType={this.setType}
           setCategory={this.setCategory}
