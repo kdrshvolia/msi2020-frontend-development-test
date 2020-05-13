@@ -56,13 +56,13 @@ const withBoard = (WrappedComponent) => {
       const { chosenOption, chosenCategory, joke } = this.state;
       return (
         <WrappedComponent
+          options={options}
           setType={this.setType}
           setCategory={this.setCategory}
           chosenOption={chosenOption}
           chosenCategory={chosenCategory}
           getJoke={this.getJoke}
           joke={joke}
-          {...this.props}
         />
       );
     }
