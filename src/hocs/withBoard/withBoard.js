@@ -12,7 +12,7 @@ const withBoard = (WrappedComponent) => {
     state = {
       chosenOption: options.random,
       chosenCategory: '',
-      joke: '',
+      joke: {},
       inputText: '',
     };
 

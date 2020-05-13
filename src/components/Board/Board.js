@@ -1,19 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SearchJokeForm from '../SearchJokeForm/SearchJokeForm';
+import JokeContainer from '../JokeContainer/JokeContainer';
 
-const Board = ({ setInputText, options, setType, setCategory, chosenOption, chosenCategory, getJoke, joke }) => {
+const Board = ({
+  setInputText,
+  options,
+  setType,
+  setCategory,
+  chosenOption,
+  chosenCategory,
+  getJoke,
+  joke,
+}) => {
   return (
-    <SearchJokeForm
-      setInputText={setInputText}
-      options={options}
-      setType={setType}
-      setCategory={setCategory}
-      chosenOption={chosenOption}
-      chosenCategory={chosenCategory}
-      getJoke={getJoke}
-      joke={joke}
-    />
+    <>
+      <SearchJokeForm
+        setInputText={setInputText}
+        options={options}
+        setType={setType}
+        setCategory={setCategory}
+        chosenOption={chosenOption}
+        chosenCategory={chosenCategory}
+        getJoke={getJoke}
+        joke={joke}
+      />
+      <JokeContainer joke={joke} />
+    </>
   );
 };
 
