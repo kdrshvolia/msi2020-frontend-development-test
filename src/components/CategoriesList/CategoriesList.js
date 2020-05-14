@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { CategoriesListWrapper, CategoryItem } from './StyledComponents';
 
 const CategoriesList = ({ categories, setCategory }) => {
   return (
-    <div>
+    <CategoriesListWrapper>
       {categories.length === 0
         ? null
-        : categories.map((category) => <div onClick={setCategory}>{category.toUpperCase()}</div>)}
-    </div>
+        : categories.map((category) => (
+            <CategoryItem onClick={setCategory}>{category.toUpperCase()}</CategoryItem>
+          ))}
+    </CategoriesListWrapper>
   );
 };
 

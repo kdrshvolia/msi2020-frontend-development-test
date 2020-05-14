@@ -12,7 +12,7 @@ const withBoard = (WrappedComponent) => {
     state = {
       chosenOption: options.random,
       chosenCategory: '',
-      joke: {},
+      jokes: [],
       inputText: '',
     };
 
@@ -35,15 +35,15 @@ const withBoard = (WrappedComponent) => {
     };
 
     getJoke = () => {
-      const { chosenOption, chosenCategory, joke } = this.state;
+      const { chosenOption, chosenCategory, jokes } = this.state;
       if (chosenOption === options.categories) {
         apiCall(`https://api.chucknorris.io/jokes/random?category=${chosenCategory}`).then(
           (data) => {
             this.setState(
               {
-                joke: data,
+                jokes: [...jokes, data],
               },
-              () => console.log(this.state.joke),
+              () => console.log(this.state.jokes),
             );
           },
         );
@@ -51,9 +51,9 @@ const withBoard = (WrappedComponent) => {
         apiCall(`https://api.chucknorris.io/jokes/random`).then((data) => {
           this.setState(
             {
-              joke: data,
+              jokes: [...jokes, data],
             },
-            () => console.log(this.state.joke),
+            () => console.log(this.state.jokes),
           );
         });
       } else if (chosenOption === options.search) {
@@ -61,16 +61,16 @@ const withBoard = (WrappedComponent) => {
         apiCall(`https://api.chucknorris.io/jokes/search?query=${inputText}`).then((data) => {
           this.setState(
             {
-              joke: data,
+              jokes: [...jokes, ...data.result],
             },
-            () => console.log(this.state.joke),
+            () => console.log(data),
           );
         });
       }
     };
 
     render() {
-      const { chosenOption, chosenCategory, joke } = this.state;
+      const { chosenOption, chosenCategory, jokes } = this.state;
       return (
         <WrappedComponent
           setInputText={this.setInputText}
@@ -80,7 +80,7 @@ const withBoard = (WrappedComponent) => {
           chosenOption={chosenOption}
           chosenCategory={chosenCategory}
           getJoke={this.getJoke}
-          joke={joke}
+          jokes={jokes}
         />
       );
     }
