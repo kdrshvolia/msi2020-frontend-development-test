@@ -22,17 +22,30 @@ const SearchJokeForm = ({
   };
   return (
     <div>
-      <Radio name="search-type" value="Random" option={options.random} handleChange={setType} />
+      <Radio
+        name="search-type"
+        value="Random"
+        checked={chosenOption === options.random}
+        option={options.random}
+        handleChange={setType}
+      />
       <Radio
         name="search-type"
         value="From categories"
+        checked={chosenOption === options.categories}
         option={options.categories}
         handleChange={setType}
       />
       {chosenOption === options.categories ? (
         <EnhancedCategoriesList setCategory={setCategory} />
       ) : null}
-      <Radio name="search-type" value="Search" option={options.search} handleChange={setType} />
+      <Radio
+        name="search-type"
+        value="Search"
+        checked={chosenOption === options.search}
+        option={options.search}
+        handleChange={setType}
+      />
       {chosenOption === options.search ? (
         <SearchInput placeholder="Search sth" onChange={handleChange} />
       ) : null}
