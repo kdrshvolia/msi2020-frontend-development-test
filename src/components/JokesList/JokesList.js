@@ -1,0 +1,1 @@
+import React from 'react';import PropTypes from 'prop-types';import JokeContainer from '../JokeContainer/JokeContainer';const JokesList = ({ jokesList }) => {  return (    <div>      {jokesList.map((joke) => (        <JokeContainer joke={joke} />      ))}    </div>  );};export default JokesList;
