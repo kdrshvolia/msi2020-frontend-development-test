@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SearchJokeForm from '../SearchJokeForm/SearchJokeForm';
 import JokeContainer from '../JokeContainer/JokeContainer';
+import JokesList from '../JokesList/JokesList';
+import Header from '../Header/Header';
 
 const Board = ({
   setInputText,
@@ -11,21 +13,25 @@ const Board = ({
   chosenOption,
   chosenCategory,
   getJoke,
-  joke,
+  categories,
+  jokes,
+  addToFav
 }) => {
   return (
     <>
+      <Header title="Hey!" subtitle="Let’s try to find a joke for you:" />
       <SearchJokeForm
         setInputText={setInputText}
         options={options}
         setType={setType}
-        setCategory={setCategory}
         chosenOption={chosenOption}
         chosenCategory={chosenCategory}
         getJoke={getJoke}
-        joke={joke}
+        jokes={jokes}
+        categories={categories}
+        setCategory={setCategory}
       />
-      <JokeContainer joke={joke} />
+      {jokes.length === 0 ? null : <JokesList jokesList={jokes} addToFav={addToFav} />}
     </>
   );
 };
@@ -42,7 +48,7 @@ Board.propTypes = {
   chosenCategory: PropTypes.string,
   setInputText: PropTypes.func.isRequired,
   getJoke: PropTypes.func.isRequired,
-  joke: PropTypes.string.isRequired,
+  jokes: PropTypes.string.isRequired,
 };
 
 export default Board;
