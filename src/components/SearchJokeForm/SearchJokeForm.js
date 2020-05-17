@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Radio from '../Radio/Radio';
 import Button from '../Button/Button';
 import CategoriesList from '../CategoriesList/CategoriesList';
-import { withCategoriesList } from '../../hocs/withCategoriesList/withCategoriesList';
 import SearchInput from '../SearchInput/SearchInput';
 
 const SearchJokeForm = ({
@@ -14,9 +13,9 @@ const SearchJokeForm = ({
   setCategory,
   chosenOption,
   chosenCategory,
+  categories,
   joke,
 }) => {
-  const EnhancedCategoriesList = withCategoriesList(CategoriesList);
   const handleChange = (text) => {
     setInputText(text);
   };
@@ -37,7 +36,11 @@ const SearchJokeForm = ({
         handleChange={setType}
       />
       {chosenOption === options.categories ? (
-        <EnhancedCategoriesList setCategory={setCategory} />
+        <CategoriesList
+          categories={categories}
+          setCategory={setCategory}
+          chosenCategory={chosenCategory}
+        />
       ) : null}
       <Radio
         name="search-type"
@@ -63,6 +66,10 @@ SearchJokeForm.propTypes = {
   setType: PropTypes.func.isRequired,
   getJoke: PropTypes.func.isRequired,
   chosenOption: PropTypes.string.isRequired,
+  setInputText: PropTypes.func.isRequired,
+  setCategory: PropTypes.func.isRequired,
+  chosenCategory: PropTypes.string.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default SearchJokeForm;
