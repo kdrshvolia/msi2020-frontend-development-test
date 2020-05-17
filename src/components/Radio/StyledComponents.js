@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+const RadioWrapper = styled.div`
+  padding: 10px;
+`;
+
 const CustomRadio = styled.input`
   &:checked,
   &:not(:checked) {
@@ -65,4 +69,4 @@ const CustomRadio = styled.input`
   }
 `;
 
-export { CustomRadio };
+export { CustomRadio, RadioWrapper };
