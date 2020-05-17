@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const RadioWrapper = styled.div`
-  padding: 10px;
+  padding: 0 10px;
 `;
 
 const CustomRadio = styled.input`
