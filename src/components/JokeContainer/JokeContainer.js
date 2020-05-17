@@ -27,4 +27,18 @@ const JokeContainer = ({ joke, toggleFav, isFavorited }) => {
   );
 };
 
+JokeContainer.propTypes = {
+  toggleFav: PropTypes.func.isRequired,
+  isFavorited: PropTypes.bool.isRequired,
+  joke: PropTypes.shape({
+    categories: PropTypes.array,
+    created_at: PropTypes.string.isRequired,
+    icon_url: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    updated_at: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 export default JokeContainer;
