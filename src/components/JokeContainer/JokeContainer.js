@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { calculateTimeDifference } from '../../util';
-import { JokeText, JokeWrapper, UpdateInfo } from './StyledComponents';
+import { JokeText, JokeWrapper, UpdateInfo, Category, JokeInfo } from './StyledComponents';
 import SvgIcon from '../SvgIcon/SvgIcon';
 import StaticLogo from '../../images/static-logo.svg';
 import LinkLogo from '../../images/link.svg';
+import CategoryItem from '../CategoryItem/CategoryItem';
 
 const JokeContainer = ({ joke, toggleFav, isFavorited }) => {
   const path = isFavorited
@@ -16,19 +17,24 @@ const JokeContainer = ({ joke, toggleFav, isFavorited }) => {
   return (
     <JokeWrapper>
       <div>
-        <div>
-          <img src={StaticLogo} alt="" />
-        </div>
+        <img src={StaticLogo} alt="" />
+      </div>
+      <div>
         <SvgIcon onClick={handleClick} width="20" height="17" path={path} fill="#ff6767" />
         <div>
+          ID:&nbsp;
           <a href={joke.url}>{joke.id}</a>
+          &nbsp;
           <img src={LinkLogo} alt="" />
         </div>
         <JokeText className="joke-text">{joke.value}</JokeText>
-        <div className="category">{joke.categories} </div>
-        <UpdateInfo className="last-update">
-          Last update: {calculateTimeDifference(Date.parse(joke.updated_at), new Date())} hours ago.
-        </UpdateInfo>
+        <JokeInfo>
+          <UpdateInfo className="last-update">
+            Last update: {calculateTimeDifference(Date.parse(joke.updated_at), new Date())} hours
+            ago.
+          </UpdateInfo>
+          <Category className="category">{joke.categories} </Category>
+        </JokeInfo>
       </div>
     </JokeWrapper>
   );
