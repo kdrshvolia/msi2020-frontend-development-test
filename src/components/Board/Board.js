@@ -4,6 +4,7 @@ import SearchJokeForm from '../SearchJokeForm/SearchJokeForm';
 import JokesList from '../JokesList/JokesList';
 import Header from '../Header/Header';
 import { BoardWrapper, Favorites, Search } from './StyledComponents';
+import MainLogo from '../MainLogo/MainLogo';
 
 const Board = ({
   setInputText,
@@ -20,6 +21,7 @@ const Board = ({
 }) => {
   return (
     <BoardWrapper>
+      <MainLogo text="MSI 2020" />
       <Search>
         <Header title="Hey!" subtitle="Let’s try to find a joke for you:" />
         <SearchJokeForm

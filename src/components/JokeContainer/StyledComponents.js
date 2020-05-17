@@ -5,6 +5,14 @@ const JokeInfo = styled.div`
   justify-content: space-between;
 `;
 
+const FavoritedIcon = styled.div`
+  display: flex;
+  & > svg {
+    margin-left: auto;
+  }
+  padding: 10px 0;
+`;
+
 const Category = styled.div`
   padding: 6px 20px;
   box-sizing: border-box;
@@ -22,17 +30,25 @@ const Category = styled.div`
   text-align: center;
 `;
 
+const Joke = styled.div`
+  display: flex;
+`;
+
 const JokeWrapper = styled.div`
   display: flex;
-  width: 680px;
-  background: #f8f8f8;
+  padding: 20px;
+  flex-direction: column;
+  max-width: ${(props) => (props.isInFavoritedList ? '400px' : '680px')};
+  background: ${(props) => (props.isInFavoritedList ? '#ffffff' : '#f8f8f8')};
   border-radius: 20px;
   box-sizing: border-box;
-  padding: 45px;
+  padding: ${(props) => (props.isInFavoritedList ? '20px' : '45px')};
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   align-items: top;
+  margin: 10px 0;
+  box-shadow: ${(props) => (props.isInFavoritedList ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : 'none')};
 `;
 
 const JokeText = styled.p`
@@ -42,7 +58,6 @@ const JokeText = styled.p`
   font-size: 18px;
   line-height: 26px;
   color: #333333;
-  width: 540px;
 `;
 
 const UpdateInfo = styled.div`
@@ -53,4 +68,17 @@ const UpdateInfo = styled.div`
   color: #ababab;
 `;
 
-export { JokeWrapper, JokeText, UpdateInfo, Category, JokeInfo };
+const Link = styled.div`
+  color: #8ea7ff;
+  & > a {
+    color: #8ea7ff;
+  }
+`;
+
+const Logo = styled.div`
+  display: flex;
+  align-items: flex-start;
+  padding: 0 20px 0 0;
+`;
+
+export { JokeWrapper, JokeText, UpdateInfo, Category, JokeInfo, Link, Logo, Joke, FavoritedIcon };

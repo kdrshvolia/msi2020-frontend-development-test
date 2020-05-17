@@ -1,7 +1,11 @@
 import styled, { css } from 'styled-components';
 
+const InputWrapper = styled.div`
+  max-width: 680px;
+`;
 const CustomInput = styled.input`
-  width: 680px;
+  width: 100%;
+  margin: 10px 0;
   height: 42px;
   border: 2px solid #333333;
   box-sizing: border-box;
@@ -15,4 +19,4 @@ const CustomInput = styled.input`
   padding: 10px 15px;
 `;
 
-export { CustomInput };
+export { CustomInput, InputWrapper };
