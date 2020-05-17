@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 const CustomInput = styled.input`
-  position: absolute;
   width: 680px;
   height: 42px;
   border: 2px solid #333333;
