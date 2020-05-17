@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { calculateTimeDifference } from '../../util';
 import { JokeText, JokeWrapper, UpdateInfo } from './StyledComponents';
 import SvgIcon from '../SvgIcon/SvgIcon';
+import StaticLogo from '../../images/static-logo.svg';
+import LinkLogo from '../../images/link.svg';
 
 const JokeContainer = ({ joke, toggleFav, isFavorited }) => {
   const path = isFavorited
@@ -14,9 +16,14 @@ const JokeContainer = ({ joke, toggleFav, isFavorited }) => {
   return (
     <JokeWrapper>
       <div>
-        <div className="logo" />
+        <div>
+          <img src={StaticLogo} alt="" />
+        </div>
         <SvgIcon onClick={handleClick} width="20" height="17" path={path} fill="#ff6767" />
-        <a href={joke.url}>{joke.id}</a>
+        <div>
+          <a href={joke.url}>{joke.id}</a>
+          <img src={LinkLogo} alt="" />
+        </div>
         <JokeText className="joke-text">{joke.value}</JokeText>
         <div className="category">{joke.categories} </div>
         <UpdateInfo className="last-update">
