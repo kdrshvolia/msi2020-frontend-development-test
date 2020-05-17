@@ -18,6 +18,7 @@ CategoryItem.propTypes = {
   id: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   children: PropTypes.string.isRequired,
+  isChosen: PropTypes.bool.isRequired,
 };
 
 export default CategoryItem;
