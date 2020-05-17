@@ -50,7 +50,7 @@ const SearchJokeForm = ({
         handleChange={setType}
       />
       {chosenOption === options.search ? (
-        <SearchInput placeholder="Search sth" onChange={handleChange} />
+        <SearchInput placeholder="Free text search..." onChange={handleChange} />
       ) : null}
       <Button text="Get a joke" onClick={getJoke} />
     </div>
