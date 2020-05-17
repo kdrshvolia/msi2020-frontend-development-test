@@ -13,7 +13,7 @@ const withBoard = (WrappedComponent) => {
       chosenOption: options.random,
       chosenCategory: '',
       jokes: [],
-      favoritedJokes: [],
+      favoritedJokes: JSON.parse(localStorage.getItem('favorites')) || {},
       categories: [],
       showCategories: 4,
       inputText: '',
@@ -23,22 +23,23 @@ const withBoard = (WrappedComponent) => {
       this.getCategories();
     }
 
-    addToFav = (id) => {
+    toggleFav = (id) => {
       const { jokes, favoritedJokes } = this.state;
       const favJoke = jokes.find((joke) => joke.id === id);
-      if (favoritedJokes.includes(favJoke)) {
+      if (favoritedJokes[id]) {
+        const { [id]: omit, ...updatedFavoritedJokes } = favoritedJokes;
         this.setState(
           {
-            favoritedJokes: favoritedJokes.filter((joke) => joke.id !== favJoke.id),
+            favoritedJokes: updatedFavoritedJokes,
           },
-          () => console.log(this.state.favoritedJokes),
+          () => localStorage.setItem('favorites', JSON.stringify(this.state.favoritedJokes)),
         );
       } else {
         this.setState(
-          {
-            favoritedJokes: [...this.state.favoritedJokes, favJoke],
+          (state) => {
+            return { favoritedJokes: { ...state.favoritedJokes, [id]: favJoke } };
           },
-          () => console.log(this.state.favoritedJokes),
+          () => localStorage.setItem('favorites', JSON.stringify(this.state.favoritedJokes)),
         );
       }
     };
@@ -50,12 +51,9 @@ const withBoard = (WrappedComponent) => {
     };
 
     setCategory = (category) => {
-      this.setState(
-        {
-          chosenCategory: category,
-        },
-        () => console.log(this.state.chosenCategory),
-      );
+      this.setState({
+        chosenCategory: category,
+      });
     };
 
     setInputText = (text) => {
@@ -106,10 +104,10 @@ const withBoard = (WrappedComponent) => {
     };
 
     render() {
-      const { chosenOption, chosenCategory, categories, jokes } = this.state;
+      const { chosenOption, chosenCategory, categories, jokes, favoritedJokes } = this.state;
       return (
         <WrappedComponent
-          addToFav={this.addToFav}
+          toggleFav={this.toggleFav}
           setInputText={this.setInputText}
           options={options}
           setType={this.setType}
@@ -118,6 +116,7 @@ const withBoard = (WrappedComponent) => {
           chosenCategory={chosenCategory}
           getJoke={this.getJoke}
           jokes={jokes}
+          favoritedJokes={favoritedJokes}
           categories={categories}
         />
       );
