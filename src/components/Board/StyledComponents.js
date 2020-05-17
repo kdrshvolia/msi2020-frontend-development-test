@@ -1,0 +1,1 @@
+import styled, { css } from 'styled-components';const BoardWrapper = styled.div`  display: flex;`;export { BoardWrapper };

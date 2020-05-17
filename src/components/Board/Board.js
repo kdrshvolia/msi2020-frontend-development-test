@@ -4,6 +4,7 @@ import SearchJokeForm from '../SearchJokeForm/SearchJokeForm';
 import JokesList from '../JokesList/JokesList';
 import Header from '../Header/Header';
 import FavoritedJokesList from '../FavoritedJokesList/FavoritedJokesList';
+import { BoardWrapper } from './StyledComponents';
 
 const Board = ({
   setInputText,
@@ -19,26 +20,30 @@ const Board = ({
   favoritedJokes,
 }) => {
   return (
-    <>
-      <Header title="Hey!" subtitle="Let’s try to find a joke for you:" />
-      <SearchJokeForm
-        setInputText={setInputText}
-        options={options}
-        setType={setType}
-        chosenOption={chosenOption}
-        chosenCategory={chosenCategory}
-        getJoke={getJoke}
-        jokes={jokes}
-        categories={categories}
-        setCategory={setCategory}
-      />
-      {jokes.length === 0 ? null : (
-        <JokesList jokesList={jokes} toggleFav={toggleFav} favoritedJokes={favoritedJokes} />
-      )}
-      {Object.keys(favoritedJokes).length === 0 ? null : (
-        <FavoritedJokesList jokesList={favoritedJokes} toggleFav={toggleFav} />
-      )}
-    </>
+    <BoardWrapper>
+      <div>
+        <Header title="Hey!" subtitle="Let’s try to find a joke for you:" />
+        <SearchJokeForm
+          setInputText={setInputText}
+          options={options}
+          setType={setType}
+          chosenOption={chosenOption}
+          chosenCategory={chosenCategory}
+          getJoke={getJoke}
+          jokes={jokes}
+          categories={categories}
+          setCategory={setCategory}
+        />
+        {jokes.length === 0 ? null : (
+          <JokesList jokesList={jokes} toggleFav={toggleFav} favoritedJokes={favoritedJokes} />
+        )}
+      </div>
+      <div>
+        {Object.keys(favoritedJokes).length === 0 ? null : (
+          <FavoritedJokesList jokesList={favoritedJokes} toggleFav={toggleFav} />
+        )}
+      </div>
+    </BoardWrapper>
   );
 };
 
