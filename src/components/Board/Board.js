@@ -34,12 +34,21 @@ const Board = ({
           setCategory={setCategory}
         />
         {jokes.length === 0 ? null : (
-          <JokesList jokesList={jokes} toggleFav={toggleFav} favoritedJokes={favoritedJokes} />
+          <JokesList
+            jokesList={jokes}
+            toggleFav={toggleFav}
+            favoritedJokes={favoritedJokes}
+            isFavoritedList={false}
+          />
         )}
       </Search>
       <Favorites>
         {Object.keys(favoritedJokes).length === 0 ? null : (
-          <JokesList jokesList={Object.values(favoritedJokes)} toggleFav={toggleFav} />
+          <JokesList
+            jokesList={Object.values(favoritedJokes)}
+            toggleFav={toggleFav}
+            isFavoritedList
+          />
         )}
       </Favorites>
     </BoardWrapper>

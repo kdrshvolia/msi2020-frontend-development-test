@@ -1,1 +1,1 @@
-import styled, { css } from 'styled-components';const BoardWrapper = styled.div`  display: flex;`;export { BoardWrapper };
+import styled, { css } from 'styled-components';const BoardWrapper = styled.div`  display: flex;  height: 100vh;`;const Favorites = styled.div`  display: flex;  flex-direction: column;  flex-basis: 40%;  background: #f8f8f8;  box-sizing: border-box;  padding: 40px;`;const Search = styled.div`  flex-basis: 60%;  padding: 0 140px;`;export { BoardWrapper, Favorites, Search };
