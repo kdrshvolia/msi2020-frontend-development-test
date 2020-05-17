@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import SearchJokeForm from '../SearchJokeForm/SearchJokeForm';
 import JokesList from '../JokesList/JokesList';
 import Header from '../Header/Header';
-import FavoritedJokesList from '../FavoritedJokesList/FavoritedJokesList';
-import { BoardWrapper } from './StyledComponents';
+import { BoardWrapper, Favorites, Search } from './StyledComponents';
 
 const Board = ({
   setInputText,
@@ -21,7 +20,7 @@ const Board = ({
 }) => {
   return (
     <BoardWrapper>
-      <div>
+      <Search>
         <Header title="Hey!" subtitle="Let’s try to find a joke for you:" />
         <SearchJokeForm
           setInputText={setInputText}
@@ -37,12 +36,12 @@ const Board = ({
         {jokes.length === 0 ? null : (
           <JokesList jokesList={jokes} toggleFav={toggleFav} favoritedJokes={favoritedJokes} />
         )}
-      </div>
-      <div>
+      </Search>
+      <Favorites>
         {Object.keys(favoritedJokes).length === 0 ? null : (
-          <FavoritedJokesList jokesList={favoritedJokes} toggleFav={toggleFav} />
+          <JokesList jokesList={Object.values(favoritedJokes)} toggleFav={toggleFav} />
         )}
-      </div>
+      </Favorites>
     </BoardWrapper>
   );
 };
