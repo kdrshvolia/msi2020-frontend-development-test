@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SearchJokeForm from '../SearchJokeForm/SearchJokeForm';
-import JokeContainer from '../JokeContainer/JokeContainer';
 import JokesList from '../JokesList/JokesList';
 import Header from '../Header/Header';
+import FavoritedJokesList from '../FavoritedJokesList/FavoritedJokesList';
 
 const Board = ({
   setInputText,
@@ -15,7 +15,8 @@ const Board = ({
   getJoke,
   categories,
   jokes,
-  addToFav
+  toggleFav,
+  favoritedJokes,
 }) => {
   return (
     <>
@@ -31,7 +32,12 @@ const Board = ({
         categories={categories}
         setCategory={setCategory}
       />
-      {jokes.length === 0 ? null : <JokesList jokesList={jokes} addToFav={addToFav} />}
+      {jokes.length === 0 ? null : (
+        <JokesList jokesList={jokes} toggleFav={toggleFav} favoritedJokes={favoritedJokes} />
+      )}
+      {Object.keys(favoritedJokes).length === 0 ? null : (
+        <FavoritedJokesList jokesList={favoritedJokes} toggleFav={toggleFav} />
+      )}
     </>
   );
 };
@@ -45,10 +51,23 @@ Board.propTypes = {
   setType: PropTypes.func.isRequired,
   setCategory: PropTypes.func.isRequired,
   chosenOption: PropTypes.string.isRequired,
-  chosenCategory: PropTypes.string,
+  chosenCategory: PropTypes.string.isRequired,
   setInputText: PropTypes.func.isRequired,
   getJoke: PropTypes.func.isRequired,
   jokes: PropTypes.string.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  toggleFav: PropTypes.func.isRequired,
+  favoritedJokes: PropTypes.shape({
+    id: PropTypes.shape({
+      categories: PropTypes.array,
+      created_at: PropTypes.string.isRequired,
+      icon_url: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      updated_at: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
 };
 
 export default Board;
