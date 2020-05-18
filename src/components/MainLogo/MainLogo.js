@@ -1,1 +1,1 @@
-import React from 'react';import PropTypes from 'prop-types';const MainLogo = ({ text }) => {  return <div>{text}</div>;};MainLogo.propTypes = {  text: PropTypes.string.isRequired,};export default MainLogo;
+import React from 'react';import PropTypes from 'prop-types';import { StyledMainLogo } from './StyledComponents';const MainLogo = ({ text }) => {  return <StyledMainLogo>{text}</StyledMainLogo>;};MainLogo.propTypes = {  text: PropTypes.string.isRequired,};export default MainLogo;
