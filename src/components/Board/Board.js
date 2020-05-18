@@ -21,8 +21,8 @@ const Board = ({
 }) => {
   return (
     <BoardWrapper>
-      <MainLogo text="MSI 2020" />
       <Search>
+        <MainLogo text="MSI 2020" />
         <Header title="Hey!" subtitle="Let’s try to find a joke for you:" />
         <SearchJokeForm
           setInputText={setInputText}

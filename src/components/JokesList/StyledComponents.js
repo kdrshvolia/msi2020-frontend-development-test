@@ -1,1 +1,1 @@
-import styled, { css } from 'styled-components';const List = styled.div`  display: flex;  justify-content: space-between;  flex-direction: column;  align-items: center;`;export { List };
+import styled, { css } from 'styled-components';const List = styled.div`  display: flex;  justify-content: space-between;  flex-direction: column;  align-items: center;  `;export { List };

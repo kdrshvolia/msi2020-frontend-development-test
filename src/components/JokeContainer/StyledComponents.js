@@ -19,14 +19,11 @@ const Category = styled.div`
   width: 107px;
   background: #ffffff;
   border-radius: 6px;
-  font-family: Roboto;
-  font-style: normal;
   font-weight: 500;
   font-size: 10px;
   line-height: 14px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #333333;
   text-align: center;
 `;
 
@@ -38,13 +35,12 @@ const JokeWrapper = styled.div`
   display: flex;
   padding: 20px;
   flex-direction: column;
+  width: 100%;
   max-width: ${(props) => (props.isInFavoritedList ? '400px' : '680px')};
   background: ${(props) => (props.isInFavoritedList ? '#ffffff' : '#f8f8f8')};
   border-radius: 20px;
   box-sizing: border-box;
   padding: ${(props) => (props.isInFavoritedList ? '20px' : '45px')};
-  font-family: Roboto;
-  font-style: normal;
   font-weight: normal;
   align-items: top;
   margin: 10px 0;
@@ -52,18 +48,14 @@ const JokeWrapper = styled.div`
 `;
 
 const JokeText = styled.p`
-  font-family: Roboto;
-  font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 26px;
-  color: #333333;
 `;
 
 const UpdateInfo = styled.div`
   font-size: 10px;
   line-height: 14px;
-  /* identical to box height, or 140% */
   width: 128px;
   color: #ababab;
 `;
