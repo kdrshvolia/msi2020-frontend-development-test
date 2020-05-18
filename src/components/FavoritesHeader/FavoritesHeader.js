@@ -1,0 +1,1 @@
+import React from 'react';const FavoritesHeader = (title) => {  return <div>{title}</div>;};export default FavoritesHeader;
