@@ -3,8 +3,20 @@ import PropTypes from 'prop-types';
 import SearchJokeForm from '../SearchJokeForm/SearchJokeForm';
 import JokesList from '../JokesList/JokesList';
 import Header from '../Header/Header';
-import { BoardWrapper, Favorites, Search } from './StyledComponents';
+import {
+  BoardWrapper,
+  Favorites,
+  FavoritesBtn,
+  FavoritesList,
+  Search,
+  SideBarOverlay,
+} from './StyledComponents';
 import MainLogo from '../MainLogo/MainLogo';
+import FavoritesHeader from '../FavoritesHeader/FavoritesHeader';
+import BurgerBtn from '../../images/favorites-burger-btn.svg';
+import CrossBtn from '../../images/favorites-cross-btn.svg';
+import { FavoritedHeader } from '../FavoritesHeader/StyledComponents';
+import FavSideBar from '../FavSideBar/FavSideBar';
 
 const Board = ({
   setInputText,
@@ -18,6 +30,8 @@ const Board = ({
   jokes,
   toggleFav,
   favoritedJokes,
+  isSideBarOpened,
+  setOpened,
 }) => {
   return (
     <BoardWrapper>
@@ -44,14 +58,27 @@ const Board = ({
           />
         )}
       </Search>
+      <SideBarOverlay isSideBarOpened={isSideBarOpened} />
       <Favorites>
-        {Object.keys(favoritedJokes).length === 0 ? null : (
-          <JokesList
-            jokesList={Object.values(favoritedJokes)}
-            toggleFav={toggleFav}
-            isFavoritedList
-          />
-        )}
+        <FavoritesHeader title="Favourite" />
+        <FavoritesList>
+          {Object.keys(favoritedJokes).length === 0 ? null : (
+            <JokesList
+              jokesList={Object.values(favoritedJokes)}
+              toggleFav={toggleFav}
+              isFavoritedList
+            />
+          )}
+        </FavoritesList>
+      </Favorites>
+      <Favorites isSideBarOpened={isSideBarOpened}>
+        <FavSideBar
+          favoritedJokes={favoritedJokes}
+          toggleFav={toggleFav}
+          isFavoritedList
+          isSideBarOpened={isSideBarOpened}
+          setOpened={setOpened}
+        />
       </Favorites>
     </BoardWrapper>
   );

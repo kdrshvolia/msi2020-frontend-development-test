@@ -10,8 +10,6 @@ const Item = styled.div`
   box-sizing: border-box;
   border-radius: 6px;
   padding: 6px 15px;
-  font-family: Roboto;
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;

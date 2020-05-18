@@ -1,0 +1,1 @@
+import styled, { css } from 'styled-components';const FavoritedHeader = styled.h3`  width: 84px;  font-weight: 500;  font-size: 20px;  line-height: 28px;  color: #ababab;  margin: 0;`;export { FavoritedHeader };

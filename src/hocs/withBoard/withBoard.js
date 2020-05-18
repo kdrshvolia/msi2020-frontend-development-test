@@ -17,6 +17,7 @@ const withBoard = (WrappedComponent) => {
       categories: [],
       showCategories: 4,
       inputText: '',
+      isSideBarOpened: false,
     };
 
     componentDidMount() {
@@ -62,6 +63,13 @@ const withBoard = (WrappedComponent) => {
       });
     };
 
+    setOpened = () => {
+      const { isSideBarOpened } = this.state;
+      this.setState({
+        isSideBarOpened: !isSideBarOpened,
+      });
+    };
+
     getCategories = () => {
       const { categories, showCategories } = this.state;
       apiCall('https://api.chucknorris.io/jokes/categories').then((data) => {
@@ -104,7 +112,14 @@ const withBoard = (WrappedComponent) => {
     };
 
     render() {
-      const { chosenOption, chosenCategory, categories, jokes, favoritedJokes } = this.state;
+      const {
+        chosenOption,
+        chosenCategory,
+        categories,
+        jokes,
+        favoritedJokes,
+        isSideBarOpened,
+      } = this.state;
       return (
         <WrappedComponent
           toggleFav={this.toggleFav}
@@ -118,6 +133,8 @@ const withBoard = (WrappedComponent) => {
           jokes={jokes}
           favoritedJokes={favoritedJokes}
           categories={categories}
+          isSideBarOpened={isSideBarOpened}
+          setOpened={this.setOpened}
         />
       );
     }

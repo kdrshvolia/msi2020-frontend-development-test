@@ -40,7 +40,7 @@ const JokeWrapper = styled.div`
   background: ${(props) => (props.isInFavoritedList ? '#ffffff' : '#f8f8f8')};
   border-radius: 20px;
   box-sizing: border-box;
-  padding: ${(props) => (props.isInFavoritedList ? '20px' : '45px')};
+  padding: ${(props) => (props.isInFavoritedList ? '5%' : '45px')};
   font-weight: normal;
   align-items: top;
   margin: 10px 0;
