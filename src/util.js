@@ -5,9 +5,7 @@ const calculateTimeDifference = (pastDate, currentDate) => {
   diffInMilliSeconds -= days * 86400;
 
   const hours = Math.floor(diffInMilliSeconds / 3600) % 24;
-
-  const difference = hours + days;
-  return difference;
+  return hours + days;
 };
 
 export { calculateTimeDifference };
