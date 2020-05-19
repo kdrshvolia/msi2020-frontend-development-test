@@ -16,7 +16,12 @@ const FavSideBar = ({ favoritedJokes, toggleFav, isFavoritedList, isSideBarOpene
       <Header>
         {' '}
         <HamburgerIcon>
-          <img src={isSideBarOpened ? CrossBtn : BurgerBtn} alt="" onClick={setOpen} />
+          <img
+            className="icon"
+            src={isSideBarOpened ? CrossBtn : BurgerBtn}
+            alt=""
+            onClick={setOpen}
+          />
         </HamburgerIcon>
         <FavoritesHeader title="Favourite" />
       </Header>
