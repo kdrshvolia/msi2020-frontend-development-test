@@ -43,8 +43,9 @@ JokesList.propTypes = {
       updated_at: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
-    }),
-  }),
+    }).isRequired,
+  }).isRequired,
+  isFavoritedList: PropTypes.bool.isRequired,
 };
 
 export default JokesList;
