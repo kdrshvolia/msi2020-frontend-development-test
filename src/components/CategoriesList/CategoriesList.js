@@ -4,17 +4,13 @@ import { CategoriesListWrapper } from './StyledComponents';
 import CategoryItem from '../CategoryItem/CategoryItem';
 
 const CategoriesList = ({ categories, setCategory, chosenCategory }) => {
-  const handleClick = (id) => {
-    setCategory(id);
-  };
-
   return (
     <CategoriesListWrapper>
       {categories.length === 0
         ? null
         : categories.map((category) => (
             <CategoryItem
-              onClick={handleClick}
+              onClick={setCategory}
               isChosen={category === chosenCategory}
               id={category}
             >
