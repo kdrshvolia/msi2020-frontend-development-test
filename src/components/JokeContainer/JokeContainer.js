@@ -10,14 +10,12 @@ import {
   Link,
   Logo,
   Joke,
-  FavoritedIcon
+  FavoritedIcon,
 } from './StyledComponents';
 import SvgIcon from '../SvgIcon/SvgIcon';
 import StaticLogo from '../../images/static-logo.svg';
 import LinkLogo from '../../images/link.svg';
 import StaticLogoFav from '../../images/static-logo-fav.svg';
-
-import CategoryItem from '../CategoryItem/CategoryItem';
 
 const JokeContainer = ({ joke, toggleFav, isFavorited, isInFavoritedList }) => {
   const path = isFavorited
