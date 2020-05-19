@@ -67,6 +67,7 @@ JokeContainer.propTypes = {
     url: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
   }).isRequired,
+  isInFavoritedList: PropTypes.bool.isRequired,
 };
 
 export default JokeContainer;
