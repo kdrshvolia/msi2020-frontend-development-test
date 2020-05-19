@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Favorites, FavoritesBtn, FavoritesList } from '../Board/StyledComponents';
+import React from 'react';
+import { FavoritesList } from '../Board/StyledComponents';
 import BurgerBtn from '../../images/favorites-burger-btn.svg';
 import CrossBtn from '../../images/favorites-cross-btn.svg';
 import FavoritesHeader from '../FavoritesHeader/FavoritesHeader';
 import JokesList from '../JokesList/JokesList';
-import { HamburgerIcon, Header } from './StyledComponents'
+import { HamburgerIcon, Header } from './StyledComponents';
 
 const FavSideBar = ({ favoritedJokes, toggleFav, isFavoritedList, isSideBarOpened, setOpened }) => {
   const setOpen = () => {
