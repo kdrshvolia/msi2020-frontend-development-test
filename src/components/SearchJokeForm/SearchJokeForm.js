@@ -15,9 +15,6 @@ const SearchJokeForm = ({
   chosenCategory,
   categories,
 }) => {
-  const handleChange = (text) => {
-    setInputText(text);
-  };
   return (
     <div>
       <Radio
@@ -49,7 +46,7 @@ const SearchJokeForm = ({
         handleChange={setType}
       />
       {chosenOption === options.search ? (
-        <SearchInput placeholder="Free text search..." onChange={handleChange} />
+        <SearchInput placeholder="Free text search..." onChange={setInputText} />
       ) : null}
       <Button text="Get a joke" onClick={getJoke} />
     </div>
