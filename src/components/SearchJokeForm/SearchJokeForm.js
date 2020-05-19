@@ -14,7 +14,6 @@ const SearchJokeForm = ({
   chosenOption,
   chosenCategory,
   categories,
-  joke,
 }) => {
   const handleChange = (text) => {
     setInputText(text);
