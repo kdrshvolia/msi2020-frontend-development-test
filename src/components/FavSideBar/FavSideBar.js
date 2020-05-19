@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FavoritesList } from '../Board/StyledComponents';
 import BurgerBtn from '../../images/favorites-burger-btn.svg';
 import CrossBtn from '../../images/favorites-cross-btn.svg';
@@ -24,12 +25,30 @@ const FavSideBar = ({ favoritedJokes, toggleFav, isFavoritedList, isSideBarOpene
           <JokesList
             jokesList={Object.values(favoritedJokes)}
             toggleFav={toggleFav}
-            isFavoritedList
+            isFavoritedList={isFavoritedList}
           />
         )}
       </FavoritesList>
     </aside>
   );
+};
+
+FavSideBar.propTypes = {
+  toggleFav: PropTypes.func.isRequired,
+  isSideBarOpened: PropTypes.bool.isRequired,
+  setOpened: PropTypes.func.isRequired,
+  isFavoritedList: PropTypes.bool.isRequired,
+  favoritedJokes: PropTypes.shape({
+    id: PropTypes.shape({
+      categories: PropTypes.array,
+      created_at: PropTypes.string.isRequired,
+      icon_url: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      updated_at: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
 };
 
 export default FavSideBar;
