@@ -35,7 +35,6 @@ const Board = ({
           chosenOption={chosenOption}
           chosenCategory={chosenCategory}
           getJoke={getJoke}
-          jokes={jokes}
           categories={categories}
           setCategory={setCategory}
         />
