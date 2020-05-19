@@ -100,6 +100,8 @@ Board.propTypes = {
       value: PropTypes.string.isRequired,
     }),
   }).isRequired,
+  isSideBarOpened: PropTypes.bool.isRequired,
+  setOpened: PropTypes.func.isRequired,
 };
 
 export default Board;
