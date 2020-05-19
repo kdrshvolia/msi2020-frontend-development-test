@@ -3,19 +3,9 @@ import PropTypes from 'prop-types';
 import SearchJokeForm from '../SearchJokeForm/SearchJokeForm';
 import JokesList from '../JokesList/JokesList';
 import Header from '../Header/Header';
-import {
-  BoardWrapper,
-  Favorites,
-  FavoritesBtn,
-  FavoritesList,
-  Search,
-  SideBarOverlay,
-} from './StyledComponents';
+import { BoardWrapper, Favorites, FavoritesList, Search, SideBarOverlay } from './StyledComponents';
 import MainLogo from '../MainLogo/MainLogo';
 import FavoritesHeader from '../FavoritesHeader/FavoritesHeader';
-import BurgerBtn from '../../images/favorites-burger-btn.svg';
-import CrossBtn from '../../images/favorites-cross-btn.svg';
-import { FavoritedHeader } from '../FavoritesHeader/StyledComponents';
 import FavSideBar from '../FavSideBar/FavSideBar';
 
 const Board = ({
