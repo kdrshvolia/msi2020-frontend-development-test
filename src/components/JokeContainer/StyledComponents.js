@@ -33,7 +33,7 @@ const Joke = styled.div`
 
 const JokeWrapper = styled.div`
   display: flex;
-  padding: 20px;
+  padding: 5%;
   flex-direction: column;
   width: 100%;
   max-width: ${(props) => (props.isInFavoritedList ? '400px' : '680px')};
@@ -51,6 +51,7 @@ const JokeText = styled.p`
   font-weight: normal;
   font-size: 18px;
   line-height: 26px;
+  margin: 7% 0;
 `;
 
 const UpdateInfo = styled.div`
