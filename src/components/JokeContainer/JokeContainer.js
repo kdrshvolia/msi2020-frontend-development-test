@@ -36,7 +36,9 @@ const JokeContainer = ({ joke, toggleFav, isFavorited, isInFavoritedList }) => {
         <div>
           <Link>
             ID:&nbsp;
-            <a href={joke.url}>{joke.id}</a>
+            <a href={joke.url} target="_blank" rel="noopener noreferrer">
+              {joke.id}
+            </a>
             &nbsp;
             <img src={LinkLogo} alt="" />
           </Link>
