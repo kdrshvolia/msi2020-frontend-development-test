@@ -104,6 +104,7 @@ Board.propTypes = {
   chosenOption: PropTypes.string.isRequired,
   chosenCategory: PropTypes.string.isRequired,
   setInputText: PropTypes.func.isRequired,
+  inputText: PropTypes.string.isRequired,
   getJoke: PropTypes.func.isRequired,
   jokes: PropTypes.string.isRequired,
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,

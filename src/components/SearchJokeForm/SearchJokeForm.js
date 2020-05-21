@@ -68,6 +68,7 @@ SearchJokeForm.propTypes = {
   getJoke: PropTypes.func.isRequired,
   chosenOption: PropTypes.string.isRequired,
   setInputText: PropTypes.func.isRequired,
+  inputText: PropTypes.string.isRequired,
   setCategory: PropTypes.func.isRequired,
   chosenCategory: PropTypes.string.isRequired,
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
