@@ -7,6 +7,7 @@ import SearchInput from '../SearchInput/SearchInput';
 
 const SearchJokeForm = ({
   setInputText,
+  inputText,
   options,
   setType,
   getJoke,
@@ -46,7 +47,11 @@ const SearchJokeForm = ({
         handleChange={setType}
       />
       {chosenOption === options.search ? (
-        <SearchInput placeholder="Free text search..." onChange={setInputText} />
+        <SearchInput
+          placeholder="Free text search..."
+          onChange={setInputText}
+          inputText={inputText}
+        />
       ) : null}
       <Button text="Get a joke" onClick={getJoke} />
     </div>

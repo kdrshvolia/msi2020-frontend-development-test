@@ -7,9 +7,13 @@ import { BoardWrapper, Favorites, FavoritesList, Search, SideBarOverlay } from '
 import MainLogo from '../MainLogo/MainLogo';
 import FavoritesHeader from '../FavoritesHeader/FavoritesHeader';
 import FavSideBar from '../FavSideBar/FavSideBar';
+import { SideBarHeader, HamburgerIcon } from '../FavSideBar/StyledComponents';
+import CrossBtn from '../../images/favorites-cross-btn.svg';
+import BurgerBtn from '../../images/favorites-burger-btn.svg';
 
 const Board = ({
   setInputText,
+  inputText,
   options,
   setType,
   setCategory,
@@ -23,6 +27,9 @@ const Board = ({
   isSideBarOpened,
   setOpened,
 }) => {
+  const setOpen = () => {
+    setOpened();
+  };
   return (
     <BoardWrapper>
       <Search>
@@ -30,6 +37,7 @@ const Board = ({
         <Header title="Hey!" subtitle="Let’s try to find a joke for you:" />
         <SearchJokeForm
           setInputText={setInputText}
+          inputText={inputText}
           options={options}
           setType={setType}
           chosenOption={chosenOption}
@@ -60,6 +68,18 @@ const Board = ({
           )}
         </FavoritesList>
       </Favorites>
+      <SideBarHeader>
+        {' '}
+        <HamburgerIcon>
+          <img
+            className="icon"
+            src={isSideBarOpened ? CrossBtn : BurgerBtn}
+            alt=""
+            onClick={setOpen}
+          />
+        </HamburgerIcon>
+        <FavoritesHeader title="Favourite" />
+      </SideBarHeader>
       <Favorites isSideBarOpened={isSideBarOpened}>
         <FavSideBar
           favoritedJokes={favoritedJokes}

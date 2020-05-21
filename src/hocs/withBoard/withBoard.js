@@ -119,10 +119,12 @@ const withBoard = (WrappedComponent) => {
         jokes,
         favoritedJokes,
         isSideBarOpened,
+        inputText,
       } = this.state;
       return (
         <WrappedComponent
           toggleFav={this.toggleFav}
+          inputText={inputText}
           setInputText={this.setInputText}
           options={options}
           setType={this.setType}

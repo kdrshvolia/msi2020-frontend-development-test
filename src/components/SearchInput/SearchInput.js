@@ -2,14 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CustomInput, InputWrapper } from './StyledComponents';
 
-const SearchInput = ({ placeholder, onChange }) => {
+const SearchInput = ({ placeholder, onChange, inputText }) => {
   const handleChange = (e) => {
     onChange(e.target.value);
   };
 
   return (
     <InputWrapper>
-      <CustomInput type="text" placeholder={placeholder} onChange={handleChange} />
+      <CustomInput
+        type="text"
+        placeholder={placeholder}
+        onChange={handleChange}
+        value={inputText}
+      />
     </InputWrapper>
   );
 };
