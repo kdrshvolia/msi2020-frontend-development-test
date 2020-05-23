@@ -36,7 +36,7 @@ const JokeWrapper = styled.div`
   padding: 5%;
   flex-direction: column;
   width: 100%;
-  max-width: ${(props) => (props.isInFavoritedList ? '400px' : '680px')};
+  max-width: ${(props) => (props.isInFavoritedList ? '450px' : '680px')};
   background: ${(props) => (props.isInFavoritedList ? '#ffffff' : '#f8f8f8')};
   border-radius: 20px;
   box-sizing: border-box;
