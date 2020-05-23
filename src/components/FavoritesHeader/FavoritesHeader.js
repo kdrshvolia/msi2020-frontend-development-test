@@ -1,1 +1,1 @@
-import React from 'react';import { FavoritedHeader } from './StyledComponents';const FavoritesHeader = ({ children }) => {  return <FavoritedHeader>{children}</FavoritedHeader>;};export default FavoritesHeader;
+import React from 'react';import PropTypes from 'prop-types';import { FavoritedHeader } from './StyledComponents';const FavoritesHeader = ({ children }) => {  return <FavoritedHeader>{children}</FavoritedHeader>;};FavoritedHeader.propTypes = {  children: PropTypes.string.isRequired,};export default FavoritesHeader;
