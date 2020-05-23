@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoriesList renders correctly 1`] = `
+<div
+  className="sc-AxjAm PLNtf"
+>
+  <div
+    className="sc-AxirZ hqXbij"
+    onClick={[Function]}
+  >
+    A
+  </div>
+  <div
+    className="sc-AxirZ hCDbqu"
+    onClick={[Function]}
+  >
+    B
+  </div>
+</div>
+`;
