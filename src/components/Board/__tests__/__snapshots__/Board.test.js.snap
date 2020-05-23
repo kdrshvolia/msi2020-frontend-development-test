@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Board Renders correctly 1`] = `
+<div
+  className="sc-fzqBZW fhiFbC"
+>
+  <div
+    className="sc-fzoyAV bYWzIm"
+  >
+    <h3
+      className="sc-fznxsB eImrbF"
+    >
+      MSI 2020
+    </h3>
+    <div>
+      <h1>
+        Hey!
+      </h1>
+      <h2>
+        Let’s try to find a joke for you:
+      </h2>
+    </div>
+    <div>
+      <div
+        className="sc-AxjAm dWVCDA"
+      >
+        <input
+          checked={true}
+          className="sc-AxirZ hxQKcv"
+          id="Random"
+          name="search-type"
+          onChange={[Function]}
+          type="radio"
+        />
+         
+        <label
+          htmlFor="Random"
+        >
+          Random
+        </label>
+      </div>
+      <div
+        className="sc-AxjAm dWVCDA"
+      >
+        <input
+          checked={true}
+          className="sc-AxirZ hxQKcv"
+          id="From categories"
+          name="search-type"
+          onChange={[Function]}
+          type="radio"
+        />
+         
+        <label
+          htmlFor="From categories"
+        >
+          From categories
+        </label>
+      </div>
+      <div
+        className="sc-AxhCb gGkwKU"
+      >
+        <div
+          className="sc-AxhUy jPMDTT"
+          onClick={[Function]}
+        >
+          A
+        </div>
+        <div
+          className="sc-AxhUy jPMDTT"
+          onClick={[Function]}
+        >
+          B
+        </div>
+        <div
+          className="sc-AxhUy jPMDTT"
+          onClick={[Function]}
+        >
+          C
+        </div>
+      </div>
+      <div
+        className="sc-AxjAm dWVCDA"
+      >
+        <input
+          checked={true}
+          className="sc-AxirZ hxQKcv"
+          id="Search"
+          name="search-type"
+          onChange={[Function]}
+          type="radio"
+        />
+         
+        <label
+          htmlFor="Search"
+        >
+          Search
+        </label>
+      </div>
+      <div
+        className="sc-AxgMl hTOpWV"
+      >
+        <input
+          className="sc-AxheI EDBAb"
+          onChange={[Function]}
+          placeholder="Free text search..."
+          type="text"
+        />
+      </div>
+      <div>
+        <button
+          className="sc-AxiKw bNMzOj"
+          onClick={[Function]}
+          type="button"
+        >
+          Get a joke
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-fzpjYC ePBISF"
+  />
+  <div
+    className="sc-fzqNJr QiOxu"
+  >
+    <h3
+      className="sc-fznJRM fAObgi"
+    >
+      Favourite
+    </h3>
+    <div
+      className="sc-fzoXzr gDXJlj"
+    />
+  </div>
+  <div
+    className="sc-fznWqX ldhGcB"
+  >
+     
+    <div
+      className="sc-fzoiQi cUsiQd"
+    >
+      <img
+        alt=""
+        className="icon"
+        onClick={[Function]}
+        src="favorites-burger-btn.svg"
+      />
+    </div>
+    <h3
+      className="sc-fznJRM fAObgi"
+    >
+      Favourite
+    </h3>
+  </div>
+  <div
+    className="sc-fzqNJr QiOxu"
+  >
+    <aside>
+      <div
+        className="sc-fzoXzr gDXJlj"
+      />
+    </aside>
+  </div>
+</div>
+`;
