@@ -1,0 +1,1 @@
+import React from 'react';import renderer from 'react-test-renderer';import MainLogo from '../MainLogo';describe('MainLogo', () => {  it('renders correctly', () => {    const rendered = renderer.create(      <MainLogo text="some text" />,    );    expect(rendered.toJSON()).toMatchSnapshot();  });});
