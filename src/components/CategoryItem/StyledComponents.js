@@ -15,6 +15,7 @@ const Item = styled.div`
   line-height: 16px;
   letter-spacing: 2px;
   transition: 0.7s;
+  margin: 5px 0 0;
 `;
 
 export { Item };
