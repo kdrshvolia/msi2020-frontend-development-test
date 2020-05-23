@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchInput Renders correctly 1`] = `
+<div
+  className="sc-AxjAm gtOyAx"
+>
+  <input
+    className="sc-AxirZ iQbumS"
+    onChange={[Function]}
+    placeholder="text"
+    type="text"
+    value="abc"
+  />
+</div>
+`;
