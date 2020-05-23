@@ -1,8 +1,1 @@
-import React from 'react';
-import { FavoritedHeader } from './StyledComponents';
-
-const FavoritesHeader = ({ title }) => {
-  return <FavoritedHeader>{title}</FavoritedHeader>;
-};
-
-export default FavoritesHeader;
+import React from 'react';import { FavoritedHeader } from './StyledComponents';const FavoritesHeader = ({ children }) => {  return <FavoritedHeader>{children}</FavoritedHeader>;};export default FavoritesHeader;

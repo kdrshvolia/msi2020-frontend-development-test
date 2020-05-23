@@ -57,7 +57,7 @@ const Board = ({
       </Search>
       <SideBarOverlay isSideBarOpened={isSideBarOpened} />
       <Favorites>
-        <FavoritesHeader title="Favourite" />
+        <FavoritesHeader>Favourite</FavoritesHeader>
         <FavoritesList>
           {Object.keys(favoritedJokes).length === 0 ? null : (
             <JokesList
@@ -78,7 +78,7 @@ const Board = ({
             onClick={setOpen}
           />
         </HamburgerIcon>
-        <FavoritesHeader title="Favourite" />
+        <FavoritesHeader>Favourite</FavoritesHeader>
       </SideBarHeader>
       <Favorites isSideBarOpened={isSideBarOpened}>
         <FavSideBar
