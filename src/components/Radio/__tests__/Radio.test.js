@@ -3,7 +3,6 @@ import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 import Radio from '../Radio';
 
-
 const option = 'search';
 const isChanged = jest.fn();
 
