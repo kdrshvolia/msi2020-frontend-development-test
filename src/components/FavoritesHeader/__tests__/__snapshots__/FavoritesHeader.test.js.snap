@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoritesHeader Renders correctly 1`] = `
+<h3
+  className="sc-AxjAm fBabhS"
+>
+  Some text
+</h3>
+`;

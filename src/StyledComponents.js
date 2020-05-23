@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     color: #333333;
     height: 100%;
     font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+    overflow-x: hidden;
   }
 `;
 

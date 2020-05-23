@@ -1,0 +1,1 @@
+import React from 'react';import renderer from 'react-test-renderer';import FavoritesHeader from '../FavoritesHeader';describe('FavoritesHeader', () => {  it('Renders correctly', () => {    const rendered = renderer.create(<FavoritesHeader>Some text</FavoritesHeader>);    expect(rendered).toMatchSnapshot();  });});
