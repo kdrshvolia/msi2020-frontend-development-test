@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavSideBar renders correctly 1`] = `
+<aside>
+  <div
+    className="sc-AxhUy kXTJEo"
+  />
+</aside>
+`;
