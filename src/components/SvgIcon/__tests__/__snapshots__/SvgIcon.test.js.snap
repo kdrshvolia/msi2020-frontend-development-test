@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SvgIcon renders correctly 1`] = `
+<svg
+  height="20"
+  onClick={[MockFunction]}
+  viewBox="0 0 20 17"
+  width="20"
+>
+  <path
+    d="2"
+    fill="red"
+  />
+</svg>
+`;
