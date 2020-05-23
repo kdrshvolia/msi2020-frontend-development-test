@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio Renders correctly 1`] = `
+<div
+  className="sc-AxjAm dWVCDA"
+>
+  <input
+    className="sc-AxirZ hxQKcv"
+    onChange={[Function]}
+    type="radio"
+  />
+   
+  <label />
+</div>
+`;
