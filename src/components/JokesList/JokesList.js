@@ -6,7 +6,7 @@ import { List } from './StyledComponents';
 const JokesList = ({ jokesList, toggleFav, favoritedJokes, isFavoritedList }) => {
   return (
     <List isFavoritedList={isFavoritedList}>
-      {jokesList.map((joke) => {
+      {jokesList.reverse().map((joke) => {
         const favorited = favoritedJokes ? !!favoritedJokes[joke.id] : true;
         return (
           <JokeContainer
