@@ -45,6 +45,9 @@ const JokeWrapper = styled.div`
   align-items: top;
   margin: 10px 0;
   box-shadow: ${(props) => (props.isInFavoritedList ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : 'none')};
+  @media (max-width: 992px) {
+    padding: 20px;
+  }
 `;
 
 const JokeText = styled.p`
